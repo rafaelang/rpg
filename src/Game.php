@@ -43,6 +43,8 @@ class Game implements IGame {
             $this->evm->trigger('game.turn', "{$currentPlayer} atacou {$opponet}");
 
         } while (count(array_filter($this->players, function($player){ return $player->life > 0;})) > 1);
+
+        $this->evm->trigger('game.end', "{$currentPlayer} é o vencedor!");
     }
 
     public function start(){
@@ -56,10 +58,13 @@ class Game implements IGame {
 
             return $p1 < $p2 ? -1 : 1;
         });
+
+        $this->evm->trigger('game.start', "{$this->players[0]} vai começar!");
     }
 
     public function turn(){
         $count_players = count($this->players);
+        $this->evm->trigger('game.turn', "------------------------ TURNO {$this->turns} ------------------------------");
         return array($this->players[$this->turns++ % $count_players], $this->players[$this->turns % $count_players]);
     }
 

@@ -8,7 +8,7 @@ class Player implements IPlayer {
     public $speed = 0;
     public $resource = null;
 
-    public function __construct($name, $life, $strong, $speed,IResource $resource){
+    public function __construct($name, $life, $strong, $speed,IResource $resource, IGame $game){
         $this->name = $name;
         $this->life = $life;
         $this->strong = $strong;

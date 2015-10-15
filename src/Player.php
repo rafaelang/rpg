@@ -14,5 +14,7 @@ class Player implements IPlayer {
         $this->speed = $speed;
     }
 
+    public function start(IDice $dice){
 
+    }
 }

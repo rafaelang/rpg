@@ -9,6 +9,16 @@ use Engine\EventManager;
 
 $evm = new EventManager();
 
+$this->evm->on('game.run', '\Engine\Game::info');
+$this->evm->on('game.addplayer', '\Engine\Game::info');
+$this->evm->on('game.start', '\Engine\Game::info');
+$this->evm->on('game.turn', '\Engine\Game::info');
+$this->evm->on('game.end', '\Engine\Game::info');
+$this->evm->on('player.start', '\Engine\Game::info');
+$this->evm->on('player.attack', '\Engine\Game::info');
+$this->evm->on('player.defense', '\Engine\Game::info');
+$this->evm->on('player.damage', '\Engine\Game::info');
+
 $game = new Game($evm);
 
 $game->addPlayers(array(

@@ -7,5 +7,5 @@ $this->breadcrumbs=array(
 
 
 <?php
-var_dump($data);
+CVarDumper::dump($data, 10, true);
 ?>

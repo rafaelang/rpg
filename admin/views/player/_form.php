@@ -16,8 +16,6 @@ use app\models\Resource;
 
     <?= $form->field($model, 'resource_id')->dropDownList(ArrayHelper::map(Resource::find()->all(), 'id', 'name')) ?>
 
-    <?= $form->field($model, 'resource_id')->textInput() ?>
-
     <?= $form->field($model, 'speed')->textInput() ?>
 
     <?= $form->field($model, 'strong')->textInput() ?>

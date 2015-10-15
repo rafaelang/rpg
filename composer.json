@@ -1,0 +1,15 @@
+{
+    "name": "rgarcia/rpg",
+    "description": "desafio rpg",
+    "authors": [
+        {
+            "name": "Rafael Garcia",
+            "email": "rafa.informatica@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Engine\\": "src/"}
+    }
+}

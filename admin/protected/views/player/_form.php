@@ -20,6 +20,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'name'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'resource_id'); ?>
 		<?php echo $form->dropDownList($model,'resource_id', CHtml::listData(Resource::model()->findAll(), 'id', 'name')); ?>
 		<?php echo $form->error($model,'resource_id'); ?>
@@ -41,12 +47,6 @@
 		<?php echo $form->labelEx($model,'life'); ?>
 		<?php echo $form->textField($model,'life'); ?>
 		<?php echo $form->error($model,'life'); ?>
-	</div>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row buttons">

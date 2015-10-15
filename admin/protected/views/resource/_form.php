@@ -20,15 +20,15 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'dice'); ?>
-		<?php echo $form->textField($model,'dice'); ?>
-		<?php echo $form->error($model,'dice'); ?>
+		<?php echo $form->labelEx($model,'name'); ?>
+		<?php echo $form->textField($model,'name',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($model,'name'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'defense'); ?>
-		<?php echo $form->textField($model,'defense'); ?>
-		<?php echo $form->error($model,'defense'); ?>
+		<?php echo $form->labelEx($model,'dice'); ?>
+		<?php echo $form->textField($model,'dice'); ?>
+		<?php echo $form->error($model,'dice'); ?>
 	</div>
 
 	<div class="row">
@@ -38,10 +38,11 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'name'); ?>
+		<?php echo $form->labelEx($model,'defense'); ?>
+		<?php echo $form->textField($model,'defense'); ?>
+		<?php echo $form->error($model,'defense'); ?>
 	</div>
+
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

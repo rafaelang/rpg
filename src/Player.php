@@ -15,6 +15,6 @@ class Player implements IPlayer {
     }
 
     public function start(IDice $dice){
-
+        return $dice->rand() + $this->speed;
     }
 }

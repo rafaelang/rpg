@@ -7,4 +7,8 @@ class Dice implements IDice {
     public function __construct($faces){
         $this->faces = (int)$faces;
     }
+
+    public function rand(){
+        return mt_rand(1, $this->faces);
+    }
 }

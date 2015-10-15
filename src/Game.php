@@ -23,9 +23,13 @@ class Game implements IGame {
     }
 
     public function start(){
-        foreach($this->players as $player)
-        {
-            $player->start($this->dice);
-        }
+        $dice = $this->dice;
+
+        usort($this->players, function($player2, $player1) use ($dice){
+            $p1 = $player1->start($dice);
+            $p2 = $player2->start($dice);
+
+            return $p1 < $p2 ? -1 : 1;
+        });
     }
 }

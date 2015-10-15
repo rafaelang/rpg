@@ -15,6 +15,7 @@ class Game implements IGame {
         $this->evm->on('game.start', array($this, 'info'));
         $this->evm->on('game.turn', array($this, 'info'));
         $this->evm->on('game.end', array($this, 'info'));
+        $this->evm->on('player.start', '\Engine\Game::info');
         $this->evm->on('player.attack', '\Engine\Game::info');
         $this->evm->on('player.defense', '\Engine\Game::info');
         $this->evm->on('player.damage', '\Engine\Game::info');
@@ -45,7 +46,9 @@ class Game implements IGame {
 
             $this->evm->trigger('game.turn', "{$currentPlayer} atacou {$opponet}");
 
-        } while (count(array_filter($this->players, function($player){ return $player->life > 0;})) > 1);
+            $this->players = array_values(array_filter($this->players, function($player){ return $player->life > 0;}));
+
+        } while (count($this->players) > 1);
 
         $this->evm->trigger('game.end', "{$currentPlayer} é o vencedor!");
     }

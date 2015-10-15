@@ -19,7 +19,9 @@ class Player implements IPlayer {
     }
 
     public function start(IDice $dice){
-        return $dice->rand() + $this->speed;
+        $power = $dice->rand() + $this->speed;
+        $this->evm->trigger('player.attack', "$this iniciou com força $power");
+        return $power;
     }
 
     public function attack(IDice $dice, IPlayer $opponent){

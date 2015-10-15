@@ -2,6 +2,7 @@
 require 'vendor/autoload.php';
 
 use Engine\Game;
+use Engine\Player;
 
 $game = new Game();
 

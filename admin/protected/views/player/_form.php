@@ -21,7 +21,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'resource_id'); ?>
-		<?php echo $form->textField($model,'resource_id'); ?>
+		<?php echo $form->dropDownList($model,'resource_id', CHtml::listData(Resource::model()->findAll(), 'id', 'name')); ?>
 		<?php echo $form->error($model,'resource_id'); ?>
 	</div>
 

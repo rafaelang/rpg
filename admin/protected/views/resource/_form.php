@@ -20,6 +20,12 @@
 	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
+		<?php echo $form->labelEx($model,'dice'); ?>
+		<?php echo $form->textField($model,'dice'); ?>
+		<?php echo $form->error($model,'dice'); ?>
+	</div>
+
+	<div class="row">
 		<?php echo $form->labelEx($model,'defense'); ?>
 		<?php echo $form->textField($model,'defense'); ?>
 		<?php echo $form->error($model,'defense'); ?>

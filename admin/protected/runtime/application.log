@@ -166,3 +166,18 @@ Stack trace:
 REQUEST_URI=/index.php?r=resource
 HTTP_REFERER=http://localhost:9999/index.php?
 ---
+2015/10/15 19:52:01 [error] [exception.Exception] exception 'Exception' with message 'attack/defense deve ser inteiro' in /var/www/rpg/src/Resource.php:13
+Stack trace:
+#0 /var/www/rpg/admin/protected/controllers/SiteController.php(93): Engine\Resource->__construct('Arma 1', '2', '2', Object(Engine\Dice))
+#1 /var/www/rpg/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRun()
+#2 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#3 /var/www/rpg/yii/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#4 /var/www/rpg/yii/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 /var/www/rpg/yii/framework/web/CWebApplication.php(282): CController->run('run')
+#6 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('site/run')
+#7 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/rpg/admin/index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/index.php?r=site/run
+HTTP_REFERER=http://localhost:9999/index.php?r=resource
+---

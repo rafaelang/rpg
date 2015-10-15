@@ -1,4 +1,3 @@
-
 SET NAMES utf8;
 SET time_zone = '+00:00';
 SET foreign_key_checks = 0;
@@ -7,25 +6,10 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 CREATE DATABASE `rpg` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `rpg`;
 
-DROP TABLE IF EXISTS `player`;
-CREATE TABLE `player` (
-  `resource_id` int(11) NOT NULL,
-  `speed` int(11) NOT NULL DEFAULT '0',
-  `strong` int(11) NOT NULL DEFAULT '0',
-  `life` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`),
-  KEY `resource_id` (`resource_id`),
-  CONSTRAINT `player_ibfk_1` FOREIGN KEY (`resource_id`) REFERENCES `resource` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `player` (`resource_id`, `speed`, `strong`, `life`, `name`, `id`) VALUES
+  (1,	2,	1,	12,	'Humano',	1),
+  (2,	0,	2,	20,	'Orc',	2);
 
-
-DROP TABLE IF EXISTS `resource`;
-CREATE TABLE `resource` (
-  `defense` int(11) NOT NULL DEFAULT '0',
-  `attack` int(11) NOT NULL DEFAULT '0',
-  `name` varchar(50) COLLATE utf8_bin NOT NULL,
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `resource` (`dice`, `defense`, `attack`, `name`, `id`) VALUES
+  (6,	2,	1,	'Espada longa',	1),
+  (8,	0,	1,	'Clava de madeira',	2);

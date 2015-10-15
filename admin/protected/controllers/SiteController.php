@@ -82,14 +82,14 @@ class SiteController extends Controller
 		{
 			$game->addPlayer(new EPlayer(
 				$player->name,
-				$player->life,
-				$player->strong,
-				$player->speed,
+				(int)$player->life,
+				(int)$player->strong,
+				(int)$player->speed,
 				new EResource(
 					$player->resource->name,
-					$player->resource->attack,
-					$player->resource->defense,
-					new Dice($player->resource->dice)
+					(int)$player->resource->attack,
+					(int)$player->resource->defense,
+					new Dice((int)$player->resource->dice)
 				),
 				$game
 			));

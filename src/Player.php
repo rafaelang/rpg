@@ -20,7 +20,22 @@ class Player implements IPlayer {
         return $dice->rand() + $this->speed;
     }
 
-    public function attack(IDice $dice){
+    public function attack(IDice $dice, IPlayer $opponent){
+        if($this->_attack($dice) > $opponent->defense($dice))
+        {
+            $this->damage($opponent);
+        }
+    }
+
+    private function _attack(IDice $dice){
         return $dice->rand() + $this->speed + $this->resource->attack;
+    }
+
+    public function defense(IDice $dice){
+        return $dice->rand() + $this->speed + $this->resource->defense;
+    }
+
+    public function damage(IPlayer $opponent){
+        $opponent->life -= $this->resource->dice->rand() + $this->strong;
     }
 }

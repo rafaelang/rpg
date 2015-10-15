@@ -60,15 +60,21 @@ class SiteController extends Controller
 
 		$evm = new EventManager();
 
-		$evm->on('game.run', '\Engine\Game::info');
-		$evm->on('game.addplayer', '\Engine\Game::info');
-		$evm->on('game.start', '\Engine\Game::info');
-		$evm->on('game.turn', '\Engine\Game::info');
-		$evm->on('game.end', '\Engine\Game::info');
-		$evm->on('player.start', '\Engine\Game::info');
-		$evm->on('player.attack', '\Engine\Game::info');
-		$evm->on('player.defense', '\Engine\Game::info');
-		$evm->on('player.damage', '\Engine\Game::info');
+		$data = [];
+		
+		$collect = function($info) use (&$data){
+			$data[] = $info;
+		};
+		
+		$evm->on('game.run', $collect);
+		$evm->on('game.addplayer', $collect);
+		$evm->on('game.start', $collect);
+		$evm->on('game.turn', $collect);
+		$evm->on('game.end', $collect);
+		$evm->on('player.start', $collect);
+		$evm->on('player.attack', $collect);
+		$evm->on('player.defense', $collect);
+		$evm->on('player.damage', $collect);
 
 		$game = new Game($evm);
 
@@ -81,7 +87,7 @@ class SiteController extends Controller
 
 		$game->run(new Dice(20));
 
-		$this->render('run');
+		$this->render('run', array('data'=>$data));
 	}
 
 	/**

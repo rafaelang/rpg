@@ -5,3 +5,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
+
+<?php
+var_dump($data);
+?>

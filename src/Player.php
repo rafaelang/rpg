@@ -10,6 +10,10 @@ class Player implements IPlayer {
     public $evm = null;
 
     public function __construct($name, $life, $strong, $speed,IResource $resource, IGame $game){
+        if(!is_int($life) || !is_int($strong) || !is_int($speed))
+        {
+            throw new \Exception('life/strong/speed devem ser inteiros');
+        }
         $this->name = $name;
         $this->life = $life;
         $this->strong = $strong;

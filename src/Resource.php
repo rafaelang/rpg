@@ -8,6 +8,10 @@ class Resource implements IResource {
     public $dice = null;
 
     public function __construct($name, $attack, $defense, IDice $dice){
+        if(!is_int($attack) || !is_int($defense))
+        {
+            throw new \Exception('attack/defense deve ser inteiro');
+        }
         $this->name = $name;
         $this->attack = $attack;
         $this->defense = $defense;

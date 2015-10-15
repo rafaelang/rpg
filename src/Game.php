@@ -33,6 +33,11 @@ class Game implements IGame {
     }
 
     public function run(IDice $dice){
+        if (count($this->players) < 2)
+        {
+            throw new \Exception('São necessários 2 players');
+        }
+
         $this->dice = $dice;
 
         $this->evm->trigger('game.run', 'O jogo começou!');

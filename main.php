@@ -14,7 +14,8 @@ $game = new Game($evm);
 $game->addPlayers(array(
     new Player('Humam', 12, 1,2, new Resource('Espada longa', 1,2, new Dice(6)), $game),
     new Player('Orc', 20, 2,0, new Resource('Clava de madeira', 1, 0, new Dice(8)), $game),
-    new Player('Time Lord', 20, 1,2, new Resource('TARDIS', 1, 1, new Dice(10)), $game),
+#    new Player('Time Lord', 20, 1,2, new Resource('TARDIS', 1, 1, new Dice(10)), $game),
+#    new Player('SuperMan', 20, 2,3, new Resource('punhos', 2, 3, new Dice(10)), $game),
 ));
 
 $game->run(new Dice(20));

@@ -9,15 +9,15 @@ use Engine\EventManager;
 
 $evm = new EventManager();
 
-$evm->evm->on('game.run', '\Engine\Game::info');
-$evm->evm->on('game.addplayer', '\Engine\Game::info');
-$evm->evm->on('game.start', '\Engine\Game::info');
-$evm->evm->on('game.turn', '\Engine\Game::info');
-$evm->evm->on('game.end', '\Engine\Game::info');
-$evm->evm->on('player.start', '\Engine\Game::info');
-$evm->evm->on('player.attack', '\Engine\Game::info');
-$evm->evm->on('player.defense', '\Engine\Game::info');
-$evm->evm->on('player.damage', '\Engine\Game::info');
+$evm->on('game.run', '\Engine\Game::info');
+$evm->on('game.addplayer', '\Engine\Game::info');
+$evm->on('game.start', '\Engine\Game::info');
+$evm->on('game.turn', '\Engine\Game::info');
+$evm->on('game.end', '\Engine\Game::info');
+$evm->on('player.start', '\Engine\Game::info');
+$evm->on('player.attack', '\Engine\Game::info');
+$evm->on('player.defense', '\Engine\Game::info');
+$evm->on('player.damage', '\Engine\Game::info');
 
 $game = new Game($evm);
 

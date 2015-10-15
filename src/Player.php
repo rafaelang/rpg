@@ -7,7 +7,7 @@ class Player implements IPlayer {
     public $strong = 0;
     public $speed = 0;
     public $resource = null;
-    private $evm = null;
+    public $evm = null;
 
     public function __construct($name, $life, $strong, $speed,IResource $resource, IGame $game){
         $this->name = $name;
@@ -16,10 +16,6 @@ class Player implements IPlayer {
         $this->speed = $speed;
         $this->resource = $resource;
         $this->evm = $game->evm;
-
-        $this->evm->on('player.attack', '\Engine\Game::info');
-        $this->evm->on('player.defense', '\Engine\Game::info');
-        $this->evm->on('player.damage', '\Engine\Game::info');
     }
 
     public function start(IDice $dice){
@@ -40,7 +36,9 @@ class Player implements IPlayer {
     }
 
     public function defense(IDice $dice){
-        return $dice->rand() + $this->speed + $this->resource->defense;
+        $power = $dice->rand() + $this->speed + $this->resource->defense;
+        $this->evm->trigger('player.defense', "$this defendeu com força $power");
+        return $power;
     }
 
     public function damage(IPlayer $opponent){

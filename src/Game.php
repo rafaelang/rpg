@@ -5,7 +5,7 @@ class Game implements IGame {
     private $players = [];
     private $dice = null;
     private $turns = 0;
-    private $evm = null;
+    public $evm = null;
 
     public function __construct(IEventManager $evm){
         $this->evm = $evm;
@@ -15,6 +15,9 @@ class Game implements IGame {
         $this->evm->on('game.start', array($this, 'info'));
         $this->evm->on('game.turn', array($this, 'info'));
         $this->evm->on('game.end', array($this, 'info'));
+        $this->evm->on('player.attack', '\Engine\Game::info');
+        $this->evm->on('player.defense', '\Engine\Game::info');
+        $this->evm->on('player.damage', '\Engine\Game::info');
     }
 
     public function addPlayers(array $players){

@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 use Engine\Game;
 use Engine\Player;
 use Engine\Resource;
+use Engine\Dice;
 
 $game = new Game();
 

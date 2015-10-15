@@ -4,6 +4,7 @@ namespace Engine;
 class Game implements IGame {
     private $players = [];
     private $dice = null;
+    private $turns = 0;
 
     public function addPlayers(array $players){
         foreach($players as $player)
@@ -23,8 +24,8 @@ class Game implements IGame {
 
         do
         {
-            $currentPlayer = $this->turn();
-            $currentPlayer->attack($this->dice);
+            list($currentPlayer, $opponet) = $this->turn();
+            $currentPlayer->attack($this->dice, $opponet);
 
         } while (count(array_filter($this->players, function($player){ return $player->life > 0;})) > 1);
     }
@@ -40,5 +41,10 @@ class Game implements IGame {
 
             return $p1 < $p2 ? -1 : 1;
         });
+    }
+
+    public function turn(){
+        $count_players = count($this->players);
+        return array($this->players[$this->turns++ % $count_players], $this->players[$this->turns % $count_players]);
     }
 }

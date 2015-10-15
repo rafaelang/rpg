@@ -13,7 +13,7 @@ class Game implements IGame {
         $this->evm->on('game.run', array($this, 'info'));
         $this->evm->on('game.addplayer', array($this, 'info'));
         $this->evm->on('game.start', array($this, 'info'));
-        $this->evm->on('game.round', array($this, 'info'));
+        $this->evm->on('game.turn', array($this, 'info'));
         $this->evm->on('game.end', array($this, 'info'));
     }
 
@@ -39,6 +39,8 @@ class Game implements IGame {
         {
             list($currentPlayer, $opponet) = $this->turn();
             $currentPlayer->attack($this->dice, $opponet);
+
+            $this->evm->trigger('game.turn', "{$currentPlayer} atacou {$opponet}");
 
         } while (count(array_filter($this->players, function($player){ return $player->life > 0;})) > 1);
     }

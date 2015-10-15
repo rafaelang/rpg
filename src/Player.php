@@ -38,4 +38,8 @@ class Player implements IPlayer {
     public function damage(IPlayer $opponent){
         $opponent->life -= $this->resource->dice->rand() + $this->strong;
     }
+
+    public function __toString(){
+        return "{$this->name} ({$this->life})";
+    }
 }

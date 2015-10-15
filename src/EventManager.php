@@ -9,7 +9,7 @@ class EventManager implements IEventManager {
     }
 
     public function trigger($name, $data){
-        if(in_array($name, $this->events))
+        if(in_array($name, array_keys($this->events)))
         {
             foreach($this->events[$name] as $callback)
             {

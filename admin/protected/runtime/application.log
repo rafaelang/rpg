@@ -20,3 +20,69 @@ Stack trace:
 REQUEST_URI=/index.php?r=gii/model/index
 HTTP_REFERER=http://localhost:9999/index.php?r=gii/default/index
 ---
+2015/10/15 19:27:42 [error] [php] include(Game.php): failed to open stream: No such file or directory (/var/www/rpg/yii/framework/YiiBase.php:432)
+Stack trace:
+#0 /var/www/rpg/admin/protected/controllers/SiteController.php(54): spl_autoload_call()
+#1 /var/www/rpg/yii/framework/web/actions/CInlineAction.php(49): SiteController->actionRun()
+#2 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#3 /var/www/rpg/yii/framework/web/CController.php(286): SiteController->runAction()
+#4 /var/www/rpg/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#5 /var/www/rpg/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#6 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#7 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#8 /var/www/rpg/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/run
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/index.php (13)
+2015/10/15 19:29:45 [error] [php] require(../../vendor/autoload.php): failed to open stream: No such file or directory (/var/www/rpg/admin/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/rpg/yii/framework/web/CController.php(286): SiteController->runAction()
+#2 /var/www/rpg/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /var/www/rpg/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/rpg/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/run
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/index.php (13)
+2015/10/15 19:29:55 [error] [php] require(../../vendor/autoload.php): failed to open stream: No such file or directory (/var/www/rpg/admin/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/rpg/yii/framework/web/CController.php(286): SiteController->runAction()
+#2 /var/www/rpg/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /var/www/rpg/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/rpg/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/run
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/index.php (13)
+2015/10/15 19:30:35 [error] [php] require(../../../vendor/autoload.php): failed to open stream: No such file or directory (/var/www/rpg/admin/protected/controllers/SiteController.php:54)
+Stack trace:
+#0 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/rpg/yii/framework/web/CController.php(286): SiteController->runAction()
+#2 /var/www/rpg/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /var/www/rpg/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/rpg/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/run
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/protected/controllers/SiteController.php (54)
+in /var/www/rpg/admin/index.php (13)
+2015/10/15 19:30:58 [error] [php] Argument 1 passed to Engine\Game::__construct() must be an instance of Engine\IEventManager, none given, called in /var/www/rpg/admin/protected/controllers/SiteController.php on line 55 and defined (/var/www/rpg/src/Game.php:10)
+Stack trace:
+#0 /var/www/rpg/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /var/www/rpg/yii/framework/web/CController.php(286): SiteController->runAction()
+#2 /var/www/rpg/yii/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#3 /var/www/rpg/yii/framework/web/CWebApplication.php(282): SiteController->run()
+#4 /var/www/rpg/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /var/www/rpg/yii/framework/base/CApplication.php(184): CWebApplication->processRequest()
+#6 /var/www/rpg/admin/index.php(13): CWebApplication->run()
+REQUEST_URI=/index.php?r=site/run
+in /var/www/rpg/src/Game.php (10)
+in /var/www/rpg/admin/protected/controllers/SiteController.php (55)
+in /var/www/rpg/admin/index.php (13)

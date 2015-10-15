@@ -5,6 +5,9 @@ use Engine\Game;
 use Engine\Player;
 use Engine\Resource;
 use Engine\Dice;
+use Engine\EventManager;
+
+$evm = new EventManager();
 
 $game = new Game();
 

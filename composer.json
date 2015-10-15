@@ -8,10 +8,10 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {
-        "cboden/ratchet": "dev-master"
-    },
+    "require": { },
     "autoload": {
-        "psr-4": {"Engine\\": "src/"}
+        "psr-4": {
+            "Engine\\": "src/"
+        }
     }
 }

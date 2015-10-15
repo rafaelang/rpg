@@ -31,11 +31,11 @@ class Resource extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('name', 'required'),
-			array('defense, attack', 'numerical', 'integerOnly'=>true),
+			array('defense, attack, dice', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('defense, attack, name, id', 'safe', 'on'=>'search'),
+			array('dice, defense, attack, name, id', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -60,6 +60,7 @@ class Resource extends CActiveRecord
 			'defense' => 'Defense',
 			'attack' => 'Attack',
 			'name' => 'Name',
+			'dice' => 'Dice Faces',
 			'id' => 'ID',
 		);
 	}

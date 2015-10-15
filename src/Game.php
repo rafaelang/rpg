@@ -5,6 +5,17 @@ class Game implements IGame {
     private $players = [];
     private $dice = null;
     private $turns = 0;
+    private $evm = null;
+
+    public function __construct(IEventManager $evm){
+        $this->evm = $evm;
+
+        $this->evm->on('game.run', array($this, 'info'));
+        $this->evm->on('game.addplayer', array($this, 'info'));
+        $this->evm->on('game.start', array($this, 'info'));
+        $this->evm->on('game.round', array($this, 'info'));
+        $this->evm->on('game.end', array($this, 'info'));
+    }
 
     public function addPlayers(array $players){
         foreach($players as $player)
@@ -19,6 +30,8 @@ class Game implements IGame {
 
     public function run(IDice $dice){
         $this->dice = $dice;
+
+        $this->evm->trigger('game.run', 'O jogo começou!');
 
         $this->start();
 
@@ -46,5 +59,9 @@ class Game implements IGame {
     public function turn(){
         $count_players = count($this->players);
         return array($this->players[$this->turns++ % $count_players], $this->players[$this->turns % $count_players]);
+    }
+
+    public static function info($data){
+        echo $data."\n";
     }
 }

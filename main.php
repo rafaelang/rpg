@@ -9,7 +9,7 @@ use Engine\EventManager;
 
 $evm = new EventManager();
 
-$game = new Game();
+$game = new Game($evm);
 
 $game->addPlayers(array(
     new Player('Humam', 12, 1,2, new Resource('Espada longa', 1,2, new Dice(6))),

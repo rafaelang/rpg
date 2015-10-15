@@ -1,7 +1,9 @@
 <?php
 
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use app\models\Resource;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Player */
@@ -11,6 +13,8 @@ use yii\widgets\ActiveForm;
 <div class="player-form">
 
     <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'resource_id')->dropDownList(ArrayHelper::map(Resource::find()->all(), 'id', 'name')) ?>
 
     <?= $form->field($model, 'resource_id')->textInput() ?>
 

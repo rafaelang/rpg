@@ -60,7 +60,7 @@ class SiteController extends Controller
 
 		$evm = new EventManager();
 
-		$data = [];
+		$data = array();
 		
 		$collect = function($info) use (&$data){
 			$data[] = $info;

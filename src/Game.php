@@ -2,7 +2,7 @@
 namespace Engine;
 
 class Game implements IGame {
-    private $players = [];
+    private $players = array();
     private $dice = null;
     private $turns = 0;
     public $evm = null;
